@@ -6,10 +6,11 @@ public class Ns {
         size=s;
     }
 
-    public String getName() {
-        return name;
-    }
-    public int getSize() {
-        return size;
+    public String getName() { return name; }
+    public String getSize() { return size; }
+    public void setSize(String size) { this.size = size; }
+
+    public String printNs(){
+        return(name+": ["+size+"] ");
     }
 }
