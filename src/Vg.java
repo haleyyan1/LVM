@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+//Needs uuid
 public class Vg extends Ns{
     private ArrayList<Pv> pv;
     public Vg(String n,String s,Pv p){
@@ -12,7 +13,7 @@ public class Vg extends Ns{
         setSize(s+"G");
     }
     public String vgList(){
-        String s = getName()+": total:["
+        String s = getName()+": total:["+getSize()+"] available:"
 
     }
 }
