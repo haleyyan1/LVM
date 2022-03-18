@@ -1,17 +1,14 @@
 import java.util.UUID;
-public class Pv extends Ns {
-    private UUID u;
+public class Pv extends Nsu {
     private Pd p;
     private boolean inVolG;
     private Vg v;
     public Pv(String n, Pd pd){
         super(n,pd.getSize());
         p=pd;
-        u=UUID.randomUUID();
         inVolG=false;
     }
 
-    public UUID getU() { return u; }
     public Pd getP() { return p; }
     public boolean isInVolG() { return inVolG; }
 
@@ -24,7 +21,7 @@ public class Pv extends Ns {
         if (inVolG) {
             s+="["+v.getName()+"] ";
         }
-        s+="[ "+u.toString()+"]";
+        s+="[ "+getUUID()+"]";
         return s;
     }
 }

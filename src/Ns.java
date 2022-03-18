@@ -8,7 +8,7 @@ public class Ns {
 
     public String getName() { return name; }
     public String getSize() { return size; }
-    public void setSize(String size) { this.size = size; }
+    public void setSize(String s) { size = s; }
 
     public String printNs(){
         return(name+": ["+size+"] ");

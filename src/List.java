@@ -22,5 +22,4 @@ public class List {
     public void addLv(Lv l){
         lvs.add(l);
     }
-
 }
