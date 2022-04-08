@@ -22,4 +22,9 @@ public class List {
     public void addLv(Lv l){
         lvs.add(l);
     }
+
+    public ArrayList<Pd> getPds() { return pds; }
+    public ArrayList<Pv> getPvs() { return pvs; }
+    public ArrayList<Vg> getVgs() { return vgs; }
+    public ArrayList<Lv> getLvs() { return lvs; }
 }

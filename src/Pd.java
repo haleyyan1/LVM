@@ -8,5 +8,4 @@ public class Pd extends Ns{
 
     public boolean isTaken() { return taken; }
     public void setTaken() { taken=true; }
-
 }
