@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class Vg extends Nsu{
-    private ArrayList<Pv> pv;
-    private ArrayList<Lv> lv;
+    private ArrayList<Pv> pv = new ArrayList<Pv>();
+    private ArrayList<Lv> lv = new ArrayList<Lv>();
     private String available;
     public Vg(String n,String s,Pv p){
         super(n,p.getSize());
@@ -19,6 +19,12 @@ public class Vg extends Nsu{
         int a = Integer.parseInt(getSize().substring(0,getSize().length()-1));
         a-=Integer.parseInt(l.getSize().substring(0,l.getSize().length()-1));
         available=a+"G";
+    }
+    public boolean enoughSpace(String s){
+        int i = Integer.parseInt(s.substring(0,s.length()-1));
+        int a = Integer.parseInt(available.substring(0,available.length()-1));
+        if (i<=a){return true;}
+        else return false;
     }
     public void extend(Pv p){
         pv.add(p);

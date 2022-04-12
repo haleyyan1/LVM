@@ -16,12 +16,13 @@ public class Pv extends Nsu {
         inVolG=true;
         this.v=v;
     }
+
     public String pvList(){
         String s = printNs();
         if (inVolG) {
             s+="["+v.getName()+"] ";
         }
-        s+="[ "+getUUID()+"]";
+        s+="["+getUUID()+"]";
         return s;
     }
 }

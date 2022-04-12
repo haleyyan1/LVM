@@ -6,6 +6,6 @@ public class Lv extends Nsu{
         this.v=v;
     }
     public String lvList(){
-        return printNs()+"["+getUUID()+"] ";
+        return printNs()+"["+v.getName()+"] ["+getUUID()+"] ";
     }
 }
