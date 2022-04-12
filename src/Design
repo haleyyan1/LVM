@@ -1,0 +1,46 @@
+class Main:
+takes in commands install-drive, pvcreate, vgcreate, vgextend, lvcreate, list-drive, pvlist, vglist, lvlist, exit
+
+class Ns:
+String name, String size
+getName(): String
+getSize(): String
+setSize(String s): void
+printNs(): String returns name + size
+
+class Nsu extends Ns:
+UUID uuid
+getUUID(): String returns uuid.toString()
+
+class Pd extends Ns:
+boolean taken (true if has physical volume)
+isTaken(): boolean
+setTaken(): void
+
+class Pv extends Nsu:
+Pd p, Vg v, boolean inVolG (true if belongs to existing volume group)
+getP(): Pd
+setInVolg(Vg v): void sets inVolG to true, puts Pv in Vg v
+pvList(): String returns printNs(), volume group name if in one, getUUID() (returns name, size, vg name, uuid)
+
+class Vg extends Nsu:
+ArrayList<Pv> pv, ArrayList<Lv> lv, String available (amount of space left)
+addLv(Lv l): void adds l to lv if there's enough space, changes String available accordingly
+enoughSpace(String s): boolean returns true if Vg has more or equal to amt of space s
+extend(Pv p): void adds physical volume p to Vg
+vgList(): String returns name, size, available, Pv(s) it contains' name(s) getName(), getUUID()
+
+class Lv extends Nsu:
+Vg v
+lvList(): String returns printNs(), getName(), getUUID()
+
+class List:
+ArrayList<Pd> pds, ArrayList<Pv> pvs, ArrayList<Vg> vgs, ArrayList<Lv> lvs
+addPd(Pd p): void
+addPv(Pv p): void
+addVg(Vg v): void
+addLv(Lv l): void
+getPds(): ArrayList<Pd>
+getPvs(): ArrayList<Pv>
+getVgs(): ArrayList<Vg>
+getLvs(): ArrayList<Lv>
